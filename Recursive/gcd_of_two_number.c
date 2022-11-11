@@ -18,16 +18,16 @@ int getGcdLoop(int num1,int num2){
         num1 = num1 % num2;// calculate remainder
 
         // change two integers without declaring additional integer
-        // by XOR Arithmetic
-        num2 = num2 ^ num1;
-        num1 = num1 ^ num2;
-        num2 = num2 ^ num1;
+        // by XOR Arithmetic          num1                  num2
+        num2 = num2 ^ num1;//         num1                num2^num1 
+        num1 = num1 ^ num2;//  num1^num2^num1 = num2      num2^num1
+        num2 = num2 ^ num1;//         num2          num2^num1^num2 = num1
     }
     return num2;
 }
 int main(int argc, char const *argv[])
 {
-    printf("Hellp");
-    // printf("%d",getGcdRecur(10,50));
+    printf("%d\n",getGcdRecur(3,50));
+    printf("%d\n",getGcdLoop(3,50));
     return 0;
 }
